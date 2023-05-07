@@ -1,0 +1,61 @@
+<!-- // Write an HTML that arrays.html
+// Show a textfield - accept a value
+// Check if the value is present in the array --- display found or not found 
+// in a <p> tag 
+// Show a button add-to-end } if this button is clicked then append in 
+// the array
+// Show a button insert-at-index , tf to accept index 
+// On click insert the value at that index and show the final array in 
+// another <p> tag 
+// Show a button remove tf to accept index
+// Remove that element and show final array in another <p> -->
+<html>
+    <head>
+        <script>
+            let arr = [12,65,95,51,4,1]
+            function insert(){ 
+                let x = document.getElementById("i").value
+                arr.push(x)
+                document.getElementById("r").innerText=arr
+
+            }
+            function del()
+             {
+                document.getElementById("r1").innerText=arr.pop()
+                
+             }
+
+             function splice(){
+                document.getElementById("r2").innerText=arr.splice(2,4)
+                console.log(arr)
+                document.getElementById("r2").innerText=arr
+
+             }
+            function search(){
+                let x = document.getElementById("i").value
+                for(let i=0;i<arr.length;i++){
+                    if(i==x){
+                        document.getElementById("Element is found")
+                    }
+                    else{
+                        document.getElementById("Element not is found")
+                    }
+                }
+                document.getElementById("r3").innerText=arr
+
+            }
+        </script>
+    </head>
+    <body>
+        Entert number <input type="number" id="i"/><br>
+        <button onclick="insert()">Insert into Array</button>
+        <p id="r"></p>
+        <button onclick="del()">Delete from Array</button>
+        <p id="r1"></p>
+        <button onclick="splice()">Slice from Array</button>
+        <p id="r2"></p>
+        Entert number <input type="number" id="i"/><br>
+        <button onclick="search()">Search from Array</button>
+        <p id="r3"></p>
+    </body>
+</html>

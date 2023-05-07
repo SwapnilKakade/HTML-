@@ -1,0 +1,31 @@
+<html>
+    <body>
+        <pre id="a">
+            Number<input type="number" id="0"/>
+            Square<input type="radio" onclick="root('sq')" id="1" name="maths" value="sq"/>
+            Cube root<input type="radio" onclick="root('cu')" id="2" name="maths" value="cu"/>
+            Current number<input type="radio" onclick="root('n')" id="3" name="maths" value="n"/>
+            <p id="r"></p>
+        </pre>
+    </body>
+    <head>
+        <script>
+            function root(choice){
+                let n = parseInt(document.getElementById("0").value)
+                let result 
+                switch(choice){
+                    case "sq":
+                        result = n*n;
+                        break;
+                    case "cu":
+                        result = n*n*n;
+                        break;
+                    case "n":
+                        result = n;
+                        break;
+                }
+                document.getElementById("r").innerHTML=`<h1>${result}</h1>`
+            }
+        </script>
+    </head>
+</html>  

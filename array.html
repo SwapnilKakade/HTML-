@@ -1,61 +1,44 @@
-<!-- // Write an HTML that arrays.html
-// Show a textfield - accept a value
-// Check if the value is present in the array --- display found or not found 
-// in a <p> tag 
-// Show a button add-to-end } if this button is clicked then append in 
-// the array
-// Show a button insert-at-index , tf to accept index 
-// On click insert the value at that index and show the final array in 
-// another <p> tag 
-// Show a button remove tf to accept index
-// Remove that element and show final array in another <p> -->
-<html>
-    <head>
-        <script>
-            let arr = [12,65,95,51,4,1]
-            function insert(){ 
-                let x = document.getElementById("i").value
-                arr.push(x)
-                document.getElementById("r").innerText=arr
+ <!-- try out the array example to push Person details in array and show all person
+names on button click as discussed in class -->
+<!DOCTYPE html>
+<html lang="en">
 
-            }
-            function del()
-             {
-                document.getElementById("r1").innerText=arr.pop()
-                
-             }
-
-             function splice(){
-                document.getElementById("r2").innerText=arr.splice(2,4)
-                console.log(arr)
-                document.getElementById("r2").innerText=arr
-
-             }
-            function search(){
-                let x = document.getElementById("i").value
-                for(let i=0;i<arr.length;i++){
-                    if(i==x){
-                        document.getElementById("Element is found")
-                    }
-                    else{
-                        document.getElementById("Element not is found")
-                    }
-                }
-                document.getElementById("r3").innerText=arr
-
-            }
-        </script>
-    </head>
     <body>
-        Entert number <input type="number" id="i"/><br>
-        <button onclick="insert()">Insert into Array</button>
-        <p id="r"></p>
-        <button onclick="del()">Delete from Array</button>
-        <p id="r1"></p>
-        <button onclick="splice()">Slice from Array</button>
-        <p id="r2"></p>
-        Entert number <input type="number" id="i"/><br>
-        <button onclick="search()">Search from Array</button>
-        <p id="r3"></p>
+    
+    <input type="text" id="i1" placeholder="NAME" >
+    <input type="number"  id="i2" placeholder="AGE">
+    <button onclick="insertinfo()">click</button>
+    <button onclick="showdetails()">Show</button>
+    <p id="p1"></p>
+
     </body>
+    <head>
+   
+            <title>Array</title>
+            <script>
+        
+            let arr=[]
+            function personinfo(pname,page)
+            {
+                this.personname=pname
+                this.personage=page
+            }
+        
+            function insertinfo()
+            {
+                let v1=document.getElementById("i1").value
+                let v2=parseInt(document.getElementById("i2").value)
+                arr.push(new personinfo(v1,v2))
+                console.log(arr)
+            }
+        
+            function showdetails(){
+        
+            for(let i =0;i<arr.length;i++){
+                 document.getElementById("p1").innerHTML=document.getElementById("p1").innerHTML+ "  "+'<br>'+arr[i].personname + "  " + arr[i].personage
+                }
+            }
+        
+            </script>
+        </head>
 </html>

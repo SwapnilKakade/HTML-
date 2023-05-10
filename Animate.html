@@ -1,0 +1,25 @@
+<!-- using Jquery animate() API , write a div that has a nice quote in a nice font , 
+color and size . Run the scroller from let to right 4 times , then R to L 
+
+On click of the button  -->
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                $("#button").click(function(){
+                    $("#i1").fadeOut();
+                    $("#i2").fadeOut("slow")
+                    $("#i3").fadeOut(3000)
+                })
+            })
+        </script>
+    </head>
+    <body>      
+        <p>Fadded box</p>
+        <button id="button">click</button>
+        <div id="i1" style="width: 80px;height: 80; background:red;"></div>
+        <div id="i2" style="width: 80px;height: 80; background:green;"></div>
+        <div id="i3" style="width: 80px;height: 80; background:yellow;"></div>
+    </body>
+</html>

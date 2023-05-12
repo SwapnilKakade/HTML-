@@ -1,0 +1,30 @@
+<!-- Using Jquery write an html that has a button-OK . When button is clicked 
+display hello in a <p> tag
+1.
+Display italics hello in another <p> tag
+Distplay underline hello in third <p> tag -->
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("button").click(function () {
+                $("#p1").toggle();
+            });
+
+        });
+    </script>
+</head>
+
+<body>
+    <div id="p1">
+        <p>Hello</p>
+        <p><u>Hello</u></p>
+        <p><i>Hello</i></p>
+    </div>
+    <button>click</button>
+
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <script>
+            function validate(){
+                let e = document.getElementById("i1")
+                if(e.checkValidity()){
+                    document.getElementById("p1").innerText="ok"
+                }
+                else{
+                    document.getElementById("p1").innerText = e.validatioMessage
+                }
+                
+                let n=document.getElementById("i2")
+                if(n.checkValidity()){
+                    document.getElementById("p2").innerText="ok"
+                }
+                else{
+                    document.getElementById("p2").innerText=n.validatioMessage
+                }
+            }
+        </script>
+    </head>
+    <body>
+        Email:<input type="email" required id="i1" minlength="4" maxlength="20"/>
+        <p id="p1"></p>
+        Number:<input type="number" required id="i2"/>
+        <p id="p2"></p>
+        <input type="button" value="check" onclick="validate()"/>
+    </body>
+</html>

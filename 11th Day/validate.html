@@ -1,0 +1,44 @@
+<!-- Write a registration form in an html 
+Validate the name as non empty, non numeric and length >2
+Validate the dob such that the age is not less than 18 age is not > 100
+Validate the email such that it has @ and dot 
+Validate the address such that it has a string "pune" 
+On successfult submit go to welcome.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Validate Registration form</title>
+   
+   <script>
+       function validateForm(){
+           let name =document.getElementById("i1").value;
+           if(name=="" || x.length<=2 || !isNaN(x)){
+               alert("Name is not filled");
+               return false;
+           }
+           let age=document.getElementById("i2").value;
+           if(parseInt(age)<=18){
+                alert("age is not filled");
+                return false
+           }
+           let email=document.getElementById("i2").value;
+           if (email == "" || !regEmail.test(email)) {
+            alert("Email is not filled");
+            return false;
+           }
+
+           return fals!
+
+}
+   </script> 
+</head>
+<body>
+    <form  name="form" onsubmit="return validateForm()" action="https://www.google.com/">
+    Name :<input type="text" id="i1"/>
+    Age :<input type="number" id="i2"/>
+    Email :<input type="email" id=i3/>
+    <input type="submit" name="submit" >
+</form>
+
+</body>
+</html>

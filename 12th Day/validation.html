@@ -1,0 +1,72 @@
+<!-- Write a registration form in an html 
+Validate the name as non empty, non numeric and length >2
+Validate the dob such that the age is not less than 18 age is not > 100
+Validate the email such that it has @ and dot 
+Validate the address such that it has a string "pune" 
+On successfult submit go to welcome.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Validate Registration form</title>
+
+    <script>
+        let uname, uage, uemail, uaddress
+        function validateForm() {
+            let name = document.forms["form"]["name"].value;
+            if (name.trim() == "" || name.length <= 2 || !isNaN(name)) {
+                alert("Name is not filled")
+                uname = false
+                document.forms["form"]["name"].focus()
+            }
+            else {
+                uname = true
+            }
+
+
+            let age = document.forms["form"]["age"].value;
+            if (age < 18) {
+                alert("age is not filled")
+                uage = false
+                document.forms["form"]["age"].focus()
+            }
+            else {
+                uage = true
+            }
+            let email = document.forms["form"]["email"].value;
+            if (email.indexOf(".") > 1) {
+                uemail = true
+            }
+            else {
+                alert("Email is not filled");
+                uemail = false
+                document.forms["form"]["email"].focus()
+            }
+
+            let address = document.forms["form"]["address"].value
+            if (address.match("pune")) {
+                uaddress = true
+            }
+            else {
+                alert("Address is not filled")
+                uaddress = false
+                document.forms["form"]["address"].focus()
+            }
+            return uname && uage && uemail && uaddress
+
+        }
+    </script>
+</head>
+
+<body>
+    <form name="form" onsubmit="return validateForm()" action="https://www.google.com/">
+        Name :<input type="text" placeholder="Enter your name" name="name" />
+        Age :<input type="number" placeholder="Enter your age" name="age" />
+        Email :<input type="email" placeholder="Enter your email" name="email" />
+        Address:<input type="text" placeholder="Enter your address" name="address" />
+        <input type="submit" name="submit">
+    </form>
+
+</body>
+
+</html>

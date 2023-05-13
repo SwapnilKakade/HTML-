@@ -1,0 +1,28 @@
+<!--  In HTML show a textfield and button. On button click show all the property 
+names of the textfield element using for-in -->
+
+<html>
+    <head>
+        <script>
+            let arr=[]
+            function Insert(){
+                let p = document.getElementById("i1").value
+                arr.push(p)
+              }
+            function Show(){
+                for(x in arr){
+                    document.getElementById("p1").innerHTML=document.getElementById("p1").innerHTML+" "+arr[x] +'<br>'
+                }
+               
+           }
+        </script>
+        
+    </head>
+    <body>
+        <input type="text" id="i1" placeholder="Name"/>
+        <input type="button" onclick="Insert()" id="i2" value="Insert"/>
+        <input type="button" onclick="Show()" id="i3" value="Show"/>
+        <p id="p1"></p>
+
+    </body>
+</html>
